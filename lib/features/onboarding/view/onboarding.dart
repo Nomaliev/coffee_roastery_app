@@ -16,8 +16,9 @@ class OnboardingScreen extends StatelessWidget {
     return BlocProvider<OnboardingCubit>(
       create: (context) => OnboardingCubit(),
       child: Scaffold(
-        backgroundColor: const Color(0xFFD2D2D2),
         appBar: AppBar(
+          toolbarHeight: 10.h,
+
           centerTitle: true,
           title: BlocBuilder<OnboardingCubit, OnboardingCubitState>(
             builder: (context, state) {
@@ -50,28 +51,28 @@ class OnboardingScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         SizedBox(),
-                        GestureDetector(
-                          onTap:
+                        OutlinedButton(
+                          onPressed:
                               () => context.read<OnboardingCubit>().skip(
                                 _pageController,
                               ),
-                          child: Text('Keç'),
+                          child: Text(
+                            'Keç',
+                            style: Theme.of(context).textTheme.bodyLarge,
+                          ),
                         ),
                       ],
                     );
                   },
                 ),
-                SizedBox(height: 8.h),
-                SizedBox(
-                  height: 400.h,
-                  child: BlocBuilder<OnboardingCubit, OnboardingCubitState>(
-                    builder: (context, state) {
-                      return OnboardingPages(
-                        pageController: _pageController,
-                        pages: OnboardingPageModel.pages(),
-                      );
-                    },
-                  ),
+                SizedBox(height: 20.h),
+                BlocBuilder<OnboardingCubit, OnboardingCubitState>(
+                  builder: (context, state) {
+                    return OnboardingPages(
+                      pageController: _pageController,
+                      pages: OnboardingPageModel.pages(),
+                    );
+                  },
                 ),
                 BlocBuilder<OnboardingCubit, OnboardingCubitState>(
                   builder: (context, state) {
@@ -87,7 +88,11 @@ class OnboardingScreen extends StatelessWidget {
                                       () => context
                                           .read<OnboardingCubit>()
                                           .nextPage(_pageController, context),
-                                  child: Text('Sonrakı >'),
+                                  child: Text(
+                                    'Sonrakı >',
+                                    style:
+                                        Theme.of(context).textTheme.bodyLarge,
+                                  ),
                                 );
                               },
                             ),
@@ -123,10 +128,14 @@ class OnboardingPages extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PageView(
-      controller: _pageController,
-      onPageChanged: (value) => context.read<OnboardingCubit>().setPage(value),
-      children: pages,
+    return SizedBox(
+      height: 450.h,
+      child: PageView(
+        controller: _pageController,
+        onPageChanged:
+            (value) => context.read<OnboardingCubit>().setPage(value),
+        children: pages,
+      ),
     );
   }
 }
