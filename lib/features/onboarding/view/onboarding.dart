@@ -1,5 +1,4 @@
-import 'package:coffeeapp/core/config/strings.dart';
-import 'package:coffeeapp/features/onboarding/view/widgets/onboardingpageview.dart';
+import 'package:coffeeapp/features/onboarding/model/onboarding_page_model.dart';
 import 'package:coffeeapp/features/onboarding/viewmodel/cubit.dart';
 import 'package:coffeeapp/features/onboarding/viewmodel/state.dart';
 import 'package:dots_indicator/dots_indicator.dart';
@@ -62,32 +61,14 @@ class OnboardingScreen extends StatelessWidget {
                     );
                   },
                 ),
+                SizedBox(height: 8.h),
                 SizedBox(
                   height: 400.h,
                   child: BlocBuilder<OnboardingCubit, OnboardingCubitState>(
                     builder: (context, state) {
-                      return PageView(
-                        controller: _pageController,
-                        onPageChanged:
-                            (value) =>
-                                context.read<OnboardingCubit>().setPage(value),
-                        children: [
-                          OnboardingPageView(
-                            image: 'assets/images/onboarding1.jpg',
-                            title: Strings.onboardingTitle1,
-                            description: Strings.onboardingDescription1,
-                          ),
-                          OnboardingPageView(
-                            image: 'assets/images/Coffee.jpg',
-                            title: Strings.onboardingTitle2,
-                            description: Strings.onboardingDescription2,
-                          ),
-                          OnboardingPageView(
-                            image: 'assets/images/onboarding3.png',
-                            title: Strings.onboardingTitle3,
-                            description: Strings.onboardingDescription3,
-                          ),
-                        ],
+                      return OnboardingPages(
+                        pageController: _pageController,
+                        pages: OnboardingPageModel.pages(),
                       );
                     },
                   ),
@@ -126,6 +107,26 @@ class OnboardingScreen extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class OnboardingPages extends StatelessWidget {
+  const OnboardingPages({
+    super.key,
+    required PageController pageController,
+    required this.pages,
+  }) : _pageController = pageController;
+
+  final PageController _pageController;
+  final List<Widget> pages;
+
+  @override
+  Widget build(BuildContext context) {
+    return PageView(
+      controller: _pageController,
+      onPageChanged: (value) => context.read<OnboardingCubit>().setPage(value),
+      children: pages,
     );
   }
 }
