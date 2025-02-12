@@ -1,4 +1,5 @@
 import 'package:coffeeapp/core/config/strings.dart';
+import 'package:coffeeapp/features/onboarding/view/widgets/onboardingpageview.dart';
 import 'package:coffeeapp/features/onboarding/viewmodel/cubit.dart';
 import 'package:coffeeapp/features/onboarding/viewmodel/state.dart';
 import 'package:dots_indicator/dots_indicator.dart';
@@ -41,7 +42,7 @@ class OnboardingScreen extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(8.0).r,
+            padding: const EdgeInsets.all(24.0).r,
             child: Column(
               children: [
                 BlocBuilder<OnboardingCubit, OnboardingCubitState>(
@@ -71,17 +72,17 @@ class OnboardingScreen extends StatelessWidget {
                             (value) =>
                                 context.read<OnboardingCubit>().setPage(value),
                         children: [
-                          OnboardingPage(
+                          OnboardingPageView(
                             image: 'assets/images/onboarding1.jpg',
                             title: Strings.onboardingTitle1,
                             description: Strings.onboardingDescription1,
                           ),
-                          OnboardingPage(
+                          OnboardingPageView(
                             image: 'assets/images/Coffee.jpg',
                             title: Strings.onboardingTitle2,
                             description: Strings.onboardingDescription2,
                           ),
-                          OnboardingPage(
+                          OnboardingPageView(
                             image: 'assets/images/onboarding3.png',
                             title: Strings.onboardingTitle3,
                             description: Strings.onboardingDescription3,
@@ -124,37 +125,6 @@ class OnboardingScreen extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class OnboardingPage extends StatelessWidget {
-  const OnboardingPage({
-    super.key,
-    required this.image,
-    required this.title,
-    required this.description,
-  });
-  final String image;
-  final String title;
-  final String description;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16).r,
-      child: Column(
-        spacing: 16.h,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: Image.asset(image, fit: BoxFit.cover),
-          ),
-          Text(title, style: Theme.of(context).textTheme.headlineLarge),
-          Text(description),
-        ],
       ),
     );
   }
