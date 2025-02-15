@@ -51,16 +51,21 @@ class OnboardingScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         SizedBox(),
-                        OutlinedButton(
-                          onPressed:
-                              () => context.read<OnboardingCubit>().skip(
-                                _pageController,
+                        state.currentIndex != 2
+                            ? SizedBox(
+                              height: 35.h,
+                              child: OutlinedButton(
+                                onPressed:
+                                    () => context.read<OnboardingCubit>().skip(
+                                      _pageController,
+                                    ),
+                                child: Text(
+                                  'Keç',
+                                  style: Theme.of(context).textTheme.bodyLarge,
+                                ),
                               ),
-                          child: Text(
-                            'Keç',
-                            style: Theme.of(context).textTheme.bodyLarge,
-                          ),
-                        ),
+                            )
+                            : SizedBox(height: 35.h),
                       ],
                     );
                   },
