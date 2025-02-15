@@ -1,4 +1,5 @@
 import 'package:coffeeapp/features/onboarding/model/onboarding_page_model.dart';
+import 'package:coffeeapp/features/onboarding/view/widgets/onboardingpages.dart';
 import 'package:coffeeapp/features/onboarding/viewmodel/cubit.dart';
 import 'package:coffeeapp/features/onboarding/viewmodel/state.dart';
 import 'package:dots_indicator/dots_indicator.dart';
@@ -116,30 +117,6 @@ class OnboardingScreen extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class OnboardingPages extends StatelessWidget {
-  const OnboardingPages({
-    super.key,
-    required PageController pageController,
-    required this.pages,
-  }) : _pageController = pageController;
-
-  final PageController _pageController;
-  final List<Widget> pages;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 450.h,
-      child: PageView(
-        controller: _pageController,
-        onPageChanged:
-            (value) => context.read<OnboardingCubit>().setPage(value),
-        children: pages,
       ),
     );
   }
