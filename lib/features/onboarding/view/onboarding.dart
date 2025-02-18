@@ -1,3 +1,4 @@
+import 'package:coffeeapp/features/authentication/view/login.dart';
 import 'package:coffeeapp/features/onboarding/model/onboarding_page_model.dart';
 import 'package:coffeeapp/features/onboarding/view/widgets/onboardingpages.dart';
 import 'package:coffeeapp/features/onboarding/viewmodel/cubit.dart';
@@ -107,7 +108,13 @@ class OnboardingScreen extends StatelessWidget {
                         : SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed:
+                                () => Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => LoginScreen(),
+                                  ),
+                                ),
                             child: Text('Keçid et'),
                           ),
                         );
