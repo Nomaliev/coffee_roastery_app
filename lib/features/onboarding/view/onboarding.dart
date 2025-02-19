@@ -56,14 +56,15 @@ class OnboardingScreen extends StatelessWidget {
                         state.currentIndex != 2
                             ? SizedBox(
                               height: 35.h,
-                              child: OutlinedButton(
-                                onPressed:
+                              child: GestureDetector(
+                                onTap:
                                     () => context.read<OnboardingCubit>().skip(
                                       _pageController,
                                     ),
                                 child: Text(
                                   'Keç',
-                                  style: Theme.of(context).textTheme.bodyLarge,
+                                  style:
+                                      Theme.of(context).textTheme.titleMedium,
                                 ),
                               ),
                             )
