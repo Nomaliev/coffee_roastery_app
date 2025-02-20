@@ -40,17 +40,11 @@ class LoginScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     TextFormField(
-                      decoration: InputDecoration(
-                        labelText: 'Email',
-                        floatingLabelBehavior: FloatingLabelBehavior.never,
-                        labelStyle: Theme.of(
-                          context,
-                        ).textTheme.bodyMedium!.apply(
-                          color: AppColors.scaffoldBackgroundColorDark,
-                        ),
-                      ),
+                      cursorColor: AppColors.scaffoldBackgroundColorDark,
+                      decoration: InputDecoration(labelText: 'Email'),
                     ),
                     TextFormField(
+                      cursorColor: AppColors.scaffoldBackgroundColorDark,
                       decoration: InputDecoration(
                         labelText: 'Şifrə',
                         floatingLabelBehavior: FloatingLabelBehavior.never,
