@@ -19,6 +19,7 @@ class Strings {
   static const String confirmPassword = 'Şifrəni Təsdiqlə';
   static const String resetPassword = 'Şifrəni Sıfırla';
   static const String resetPasswordTitle = 'Email ünvanı ilə şifrə bərpası';
+  static const String alreadyHaveAccount = 'Hesabınız var ?';
   static const String resetPasswordDescription =
       'Zəhmət olmasa email ünvanınızı daxil edin';
   static const String sendLink = 'Davam et';
