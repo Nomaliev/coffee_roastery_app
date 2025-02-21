@@ -1,5 +1,6 @@
 import 'package:coffeeapp/core/config/colors.dart';
 import 'package:coffeeapp/core/config/strings.dart';
+import 'package:coffeeapp/features/authentication/view/success_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
@@ -52,6 +53,25 @@ class ForgetPasswordScreen extends StatelessWidget {
 
                   labelText: Strings.email,
                   prefixIcon: const Icon(Iconsax.sms),
+                ),
+              ),
+            ),
+            SizedBox(height: 16.h),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SuccessScreen(),
+                    ),
+                  );
+                },
+                child: Text(
+                  Strings.sendLink,
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
               ),
             ),

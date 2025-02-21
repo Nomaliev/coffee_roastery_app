@@ -5,6 +5,7 @@ class AppTextFieldTheme {
   //Light Theme
   static InputDecorationTheme lightTextFieldTheme = const InputDecorationTheme(
     labelStyle: TextStyle(color: Colors.grey),
+    floatingLabelStyle: TextStyle(color: AppColors.scaffoldBackgroundColorDark),
     errorMaxLines: 3,
     prefixIconColor: AppColors.scaffoldBackgroundColorDark,
     suffixIconColor: AppColors.scaffoldBackgroundColorDark,
