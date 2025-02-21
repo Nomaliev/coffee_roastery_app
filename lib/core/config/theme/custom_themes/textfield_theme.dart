@@ -1,4 +1,4 @@
-import 'package:coffeeapp/core/config/colors.dart';
+import 'package:coffeeapp/core/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class AppTextFieldTheme {

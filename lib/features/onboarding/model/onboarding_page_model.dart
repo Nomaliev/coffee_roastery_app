@@ -1,4 +1,4 @@
-import 'package:coffeeapp/core/config/strings.dart';
+import 'package:coffeeapp/core/utils/constants/strings.dart';
 import 'package:coffeeapp/features/onboarding/view/widgets/onboardingpageview.dart';
 import 'package:flutter/widgets.dart';
 

@@ -1,4 +1,4 @@
-import 'package:coffeeapp/core/config/colors.dart';
+import 'package:coffeeapp/core/utils/constants/colors.dart';
 import 'package:coffeeapp/core/config/theme/custom_themes/appbar_theme.dart';
 import 'package:coffeeapp/core/config/theme/custom_themes/elevated_button_theme.dart';
 import 'package:coffeeapp/core/config/theme/custom_themes/text_theme.dart';
