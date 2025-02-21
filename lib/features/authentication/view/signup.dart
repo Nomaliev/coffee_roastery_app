@@ -1,4 +1,4 @@
-import 'package:coffeeapp/core/config/strings.dart';
+import 'package:coffeeapp/core/utils/constants/strings.dart';
 import 'package:coffeeapp/features/authentication/view/widgets/appbar.dart';
 import 'package:coffeeapp/features/authentication/view/widgets/signup_form.dart';
 import 'package:coffeeapp/features/authentication/viewmodel/signup_cubit.dart';

@@ -1,5 +1,5 @@
-import 'package:coffeeapp/core/config/colors.dart';
-import 'package:coffeeapp/core/config/strings.dart';
+import 'package:coffeeapp/core/utils/constants/colors.dart';
+import 'package:coffeeapp/core/utils/constants/strings.dart';
 import 'package:coffeeapp/features/authentication/viewmodel/signup_cubit.dart';
 import 'package:coffeeapp/features/authentication/viewmodel/signup_state.dart';
 import 'package:flutter/material.dart';
