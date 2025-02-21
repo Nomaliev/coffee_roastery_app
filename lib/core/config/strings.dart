@@ -16,7 +16,13 @@ class Strings {
   static const String signupNameAndSurname = 'Ad və Soyad';
   static const String email = 'Email';
   static const String password = 'Şifrə';
+  static const String confirmPassword = 'Şifrəni Təsdiqlə';
+  static const String resetPassword = 'Şifrəni Sıfırla';
+  static const String resetPasswordTitle = 'Email ünvanı ilə şifrə bərpası';
+  static const String resetPasswordDescription =
+      'Zəhmət olmasa email ünvanınızı daxil edin';
   static const String onboardingImage1 = 'assets/images/onboarding1.jpg';
   static const String onboardingImage2 = 'assets/images/onboarding2.jpg';
   static const String onboardingImage3 = 'assets/images/onboarding3.png';
+  static const String forgetPasswordImage = 'assets/images/forgetpassword.png';
 }

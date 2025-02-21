@@ -1,5 +1,6 @@
 import 'package:coffeeapp/core/config/colors.dart';
 import 'package:coffeeapp/core/config/strings.dart';
+import 'package:coffeeapp/features/authentication/view/forget_password.dart';
 import 'package:coffeeapp/features/authentication/viewmodel/login_cubit.dart';
 import 'package:coffeeapp/features/authentication/viewmodel/login_state.dart';
 import 'package:flutter/material.dart';
@@ -68,7 +69,13 @@ class LoginForm extends StatelessWidget {
               children: [
                 const SizedBox(),
                 GestureDetector(
-                  onTap: () {},
+                  onTap:
+                      () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ForgetPasswordScreen(),
+                        ),
+                      ),
                   child: Text(
                     Strings.loginForgetPassword,
                     style: Theme.of(

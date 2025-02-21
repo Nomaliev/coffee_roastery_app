@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class AppTextFieldTheme {
   //Light Theme
   static InputDecorationTheme lightTextFieldTheme = const InputDecorationTheme(
+    labelStyle: TextStyle(color: Colors.grey),
     errorMaxLines: 3,
     prefixIconColor: AppColors.scaffoldBackgroundColorDark,
     suffixIconColor: AppColors.scaffoldBackgroundColorDark,

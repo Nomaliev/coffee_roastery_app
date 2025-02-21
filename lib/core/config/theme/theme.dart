@@ -10,7 +10,7 @@ class AppThemes {
     useMaterial3: true,
     brightness: Brightness.light,
     textTheme: AppTextTheme.customTextTheme,
-    elevatedButtonTheme: AppElevatedButtonTheme.darkElevatedButtonTheme,
+    elevatedButtonTheme: AppElevatedButtonTheme.lightElevatedButtonTheme,
     scaffoldBackgroundColor: AppColors.scaffoldBackgroundColorDark,
     appBarTheme: AppAppBarTheme.darkAppBarTheme,
     inputDecorationTheme: AppTextFieldTheme.lightTextFieldTheme,

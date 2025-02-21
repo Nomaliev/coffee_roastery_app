@@ -1,3 +1,4 @@
+import 'package:coffeeapp/core/config/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -8,7 +9,7 @@ class AppElevatedButtonTheme {
     style: ElevatedButton.styleFrom(
       elevation: 0,
       foregroundColor: Colors.white,
-      backgroundColor: Colors.brown,
+      backgroundColor: AppColors.scaffoldBackgroundColorDark,
       disabledForegroundColor: Colors.grey,
       disabledBackgroundColor: Colors.grey,
       padding: const EdgeInsets.symmetric(vertical: 18),
