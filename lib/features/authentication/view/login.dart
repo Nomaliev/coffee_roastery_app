@@ -1,5 +1,9 @@
 import 'package:coffeeapp/core/config/colors.dart';
+import 'package:coffeeapp/core/config/strings.dart';
+import 'package:coffeeapp/features/authentication/viewmodel/login_cubit.dart';
+import 'package:coffeeapp/features/authentication/viewmodel/login_state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -9,96 +13,141 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 150.h,
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Xoş Gəlmisiniz !',
-              style: Theme.of(context).textTheme.headlineLarge,
-            ),
-            Text(
-              'Zəhmət olmasa daxil olun',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
+      appBar: const LoginSignupAppBar(
+        title: Strings.loginTitle,
+        subTitle: Strings.loginDescription,
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(50.r),
-            topRight: Radius.circular(50.r),
+      body: BlocProvider<LoginCubit>(
+        create: (context) => LoginCubit(),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(50.r),
+              topRight: Radius.circular(50.r),
+            ),
+            color: Colors.white,
           ),
-          color: Colors.white,
-        ),
-        child: Padding(
-          padding: EdgeInsets.only(top: 70.h, right: 24.w, left: 24.w),
-          child: Column(
-            children: [
-              Form(
-                child: Column(
-                  children: [
-                    TextFormField(
-                      cursorColor: AppColors.scaffoldBackgroundColorDark,
-                      decoration: const InputDecoration(
-                        labelText: 'Email',
-                        prefixIcon: Icon(Iconsax.sms),
-                      ),
-                    ),
-                    SizedBox(height: 16.h),
-                    TextFormField(
-                      cursorColor: AppColors.scaffoldBackgroundColorDark,
-                      decoration: InputDecoration(
-                        prefixIcon: const Icon(Iconsax.password_check),
-                        suffixIcon: GestureDetector(
-                          onTap: () {},
-                          child: const Icon(Iconsax.eye),
+          child: Padding(
+            padding: EdgeInsets.only(top: 70.h, right: 24.w, left: 24.w),
+            child: Column(
+              children: [
+                Form(
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        cursorColor: AppColors.scaffoldBackgroundColorDark,
+                        decoration: const InputDecoration(
+                          labelText: 'Email',
+                          prefixIcon: Icon(Iconsax.sms),
                         ),
-                        labelText: 'Şifrə',
+                      ),
+                      SizedBox(height: 16.h),
+                      BlocBuilder<LoginCubit, LoginCubitState>(
+                        builder: (context, state) {
+                          return TextFormField(
+                            style: Theme.of(
+                              context,
+                            ).textTheme.bodyMedium!.apply(
+                              color: AppColors.scaffoldBackgroundColorDark,
+                            ),
+                            obscureText: !state.showPassword,
+                            cursorColor: AppColors.scaffoldBackgroundColorDark,
+                            decoration: InputDecoration(
+                              prefixIcon: const Icon(Iconsax.password_check),
+                              suffixIcon: GestureDetector(
+                                onTap:
+                                    () =>
+                                        context
+                                            .read<LoginCubit>()
+                                            .showPassword(),
+                                child: Icon(
+                                  state.showPassword
+                                      ? Iconsax.eye
+                                      : Iconsax.eye_slash,
+                                ),
+                              ),
+                              labelText: 'Şifrə',
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 16.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const SizedBox(),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Text(
+                        'Şifrənizi unutmusunuz ?',
+                        style: Theme.of(
+                          context,
+                        ).textTheme.bodyMedium!.apply(color: Colors.black),
                       ),
                     ),
                   ],
                 ),
-              ),
-              SizedBox(height: 16.h),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const SizedBox(),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Text(
-                      'Şifrənizi unutmusunuz ?',
+                SizedBox(height: 50.h),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: const Text('Daxil ol'),
+                  ),
+                ),
+                SizedBox(height: 8.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      'Hesabınız yoxdur ?',
                       style: Theme.of(
                         context,
-                      ).textTheme.bodyMedium!.apply(color: Colors.black),
+                      ).textTheme.bodySmall!.apply(color: Colors.grey),
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 50.h),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Daxil ol'),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Text(
+                        'Qeydiyyatdan Keç',
+                        style: Theme.of(context).textTheme.titleLarge!.apply(
+                          color: AppColors.scaffoldBackgroundColorDark,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-              Row(
-                children: [
-                  Text('Hesabınız yoxdur ?'),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Text('Qeydiyyatdan Keç'),
-                  ),
-                ],
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
     );
   }
+}
+
+class LoginSignupAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const LoginSignupAppBar({super.key, required this.title, this.subTitle});
+  final String title;
+  final String? subTitle;
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      toolbarHeight: 150.h,
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(title, style: Theme.of(context).textTheme.headlineLarge),
+          if (subTitle != null)
+            Text(subTitle!, style: Theme.of(context).textTheme.headlineMedium),
+        ],
+      ),
+    );
+  }
+
+  @override
+  Size get preferredSize => Size.fromHeight(150.h);
 }

@@ -1,4 +1,4 @@
-import 'package:coffeeapp/features/onboarding/viewmodel/cubit.dart';
+import 'package:coffeeapp/features/onboarding/viewmodel/onboarding_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -1,5 +1,5 @@
 import 'package:coffeeapp/features/onboarding/view/onboarding.dart';
-import 'package:coffeeapp/features/onboarding/viewmodel/state.dart';
+import 'package:coffeeapp/features/onboarding/viewmodel/onboarding_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

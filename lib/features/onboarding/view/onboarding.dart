@@ -1,8 +1,8 @@
 import 'package:coffeeapp/features/authentication/view/login.dart';
 import 'package:coffeeapp/features/onboarding/model/onboarding_page_model.dart';
 import 'package:coffeeapp/features/onboarding/view/widgets/onboardingpages.dart';
-import 'package:coffeeapp/features/onboarding/viewmodel/cubit.dart';
-import 'package:coffeeapp/features/onboarding/viewmodel/state.dart';
+import 'package:coffeeapp/features/onboarding/viewmodel/onboarding_cubit.dart';
+import 'package:coffeeapp/features/onboarding/viewmodel/onboarding_state.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -6,6 +6,12 @@ class Strings {
   static const String onboardingDescription2 = 'Kofe dənələrinin ən yaxşısı';
   static const String onboardingTitle3 = 'Kofe dənələrinin ən yaxşısı';
   static const String onboardingDescription3 = 'Kofe dənələrinin ən yaxşısı';
+  static const String loginTitle = 'Xoş Gəlmisiniz !';
+  static const String loginDescription = 'Zəhmət olmasa daxil olun';
+  static const String loginForgetPassword = 'Şifrənizi unutmusunuz ?';
+  static const String loginButton = 'Daxil ol';
+  static const String loginNoAccount = 'Hesabınız yoxdur ?';
+  static const String loginRegister = 'Qeydiyyatdan Keç';
   static const String onboardingImage1 = 'assets/images/onboarding1.jpg';
   static const String onboardingImage2 = 'assets/images/onboarding2.jpg';
   static const String onboardingImage3 = 'assets/images/onboarding3.png';
