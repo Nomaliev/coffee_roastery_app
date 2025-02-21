@@ -12,6 +12,10 @@ class Strings {
   static const String loginButton = 'Daxil ol';
   static const String loginNoAccount = 'Hesabınız yoxdur ?';
   static const String loginRegister = 'Qeydiyyatdan Keç';
+  static const String signupRegister = '';
+  static const String signupNameAndSurname = 'Ad və Soyad';
+  static const String email = 'Email';
+  static const String password = 'Şifrə';
   static const String onboardingImage1 = 'assets/images/onboarding1.jpg';
   static const String onboardingImage2 = 'assets/images/onboarding2.jpg';
   static const String onboardingImage3 = 'assets/images/onboarding3.png';
