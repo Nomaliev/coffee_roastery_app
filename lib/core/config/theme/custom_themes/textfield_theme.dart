@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class AppTextFieldTheme {
   //Light Theme
-  static InputDecorationTheme lightTextFieldTheme = InputDecorationTheme(
+  static InputDecorationTheme lightTextFieldTheme = const InputDecorationTheme(
     errorMaxLines: 3,
     prefixIconColor: AppColors.scaffoldBackgroundColorDark,
     suffixIconColor: AppColors.scaffoldBackgroundColorDark,
@@ -16,11 +16,12 @@ class AppTextFieldTheme {
     border: UnderlineInputBorder(
       borderSide: BorderSide(color: AppColors.scaffoldBackgroundColorDark),
     ),
-    floatingLabelBehavior: FloatingLabelBehavior.never,
   );
 
   //Dark Theme
-  static InputDecorationTheme darkTextFieldTheme = InputDecorationTheme(
+  static InputDecorationTheme darkTextFieldTheme = const InputDecorationTheme(
+    floatingLabelStyle: TextStyle(color: Colors.grey),
+    contentPadding: EdgeInsets.zero,
     errorMaxLines: 2,
     prefixIconColor: AppColors.scaffoldBackgroundColorDark,
     suffixIconColor: AppColors.scaffoldBackgroundColorDark,
@@ -33,6 +34,5 @@ class AppTextFieldTheme {
     border: UnderlineInputBorder(
       borderSide: BorderSide(color: AppColors.scaffoldBackgroundColorDark),
     ),
-    floatingLabelBehavior: FloatingLabelBehavior.never,
   );
 }

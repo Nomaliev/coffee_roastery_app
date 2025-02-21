@@ -15,17 +15,17 @@ class OnboardingPageModel {
 
   static List<Widget> pages() {
     return [
-      OnboardingPageView(
+      const OnboardingPageView(
         title: Strings.onboardingTitle1,
         description: Strings.onboardingDescription1,
         image: Strings.onboardingImage1,
       ),
-      OnboardingPageView(
+      const OnboardingPageView(
         title: Strings.onboardingTitle2,
         description: Strings.onboardingDescription2,
         image: Strings.onboardingImage2,
       ),
-      OnboardingPageView(
+      const OnboardingPageView(
         title: Strings.onboardingTitle3,
         description: Strings.onboardingDescription3,
         image: Strings.onboardingImage3,

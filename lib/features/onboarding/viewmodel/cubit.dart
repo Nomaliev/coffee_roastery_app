@@ -1,11 +1,10 @@
 import 'package:coffeeapp/features/onboarding/view/onboarding.dart';
 import 'package:coffeeapp/features/onboarding/viewmodel/state.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class OnboardingCubit extends Cubit<OnboardingCubitState> {
-  OnboardingCubit() : super(OnboardingCubitState());
+  OnboardingCubit() : super(const OnboardingCubitState());
 
   void setPage(int index) {
     emit(OnboardingCubitState(currentIndex: index));

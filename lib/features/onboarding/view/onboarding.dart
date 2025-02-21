@@ -52,7 +52,7 @@ class OnboardingScreen extends StatelessWidget {
                     return Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SizedBox(),
+                        const SizedBox(),
                         state.currentIndex != 2
                             ? SizedBox(
                               height: 35.h,
@@ -88,7 +88,7 @@ class OnboardingScreen extends StatelessWidget {
                         ? Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            SizedBox(),
+                            const SizedBox(),
                             BlocBuilder<OnboardingCubit, OnboardingCubitState>(
                               builder: (context, state) {
                                 return OutlinedButton(
@@ -113,10 +113,10 @@ class OnboardingScreen extends StatelessWidget {
                                 () => Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => LoginScreen(),
+                                    builder: (context) => const LoginScreen(),
                                   ),
                                 ),
-                            child: Text('Keçid et'),
+                            child: const Text('Keçid et'),
                           ),
                         );
                   },

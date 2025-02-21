@@ -6,23 +6,23 @@ import 'package:coffeeapp/core/config/theme/custom_themes/textfield_theme.dart';
 import 'package:flutter/material.dart';
 
 class AppThemes {
-  static ThemeData lightTheme = ThemeData(
+  static ThemeData customTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.light,
-    textTheme: AppTextTheme.ligthTextTheme,
-    elevatedButtonTheme: AppElevatedButtonTheme.lightElevatedButtonTheme,
-    scaffoldBackgroundColor: AppColors.scaffoldBackgroundColorLight,
-    appBarTheme: AppAppBarTheme.lightAppBarTheme,
-    inputDecorationTheme: AppTextFieldTheme.lightTextFieldTheme,
-  );
-
-  static ThemeData darkTheme = ThemeData(
-    useMaterial3: true,
-    brightness: Brightness.dark,
-    textTheme: AppTextTheme.darkTextTheme,
+    textTheme: AppTextTheme.customTextTheme,
     elevatedButtonTheme: AppElevatedButtonTheme.darkElevatedButtonTheme,
     scaffoldBackgroundColor: AppColors.scaffoldBackgroundColorDark,
     appBarTheme: AppAppBarTheme.darkAppBarTheme,
     inputDecorationTheme: AppTextFieldTheme.darkTextFieldTheme,
   );
+
+  // static ThemeData darkTheme = ThemeData(
+  //   useMaterial3: true,
+  //   brightness: Brightness.dark,
+  //   textTheme: AppTextTheme.customTextTheme,
+  //   elevatedButtonTheme: AppElevatedButtonTheme.darkElevatedButtonTheme,
+  //   scaffoldBackgroundColor: AppColors.scaffoldBackgroundColorDark,
+  //   appBarTheme: AppAppBarTheme.darkAppBarTheme,
+  //   inputDecorationTheme: AppTextFieldTheme.darkTextFieldTheme,
+  // );
 }

@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -5,66 +7,7 @@ class AppTextTheme {
   AppTextTheme._();
 
   //Customizable Light Text Theme
-  static TextTheme ligthTextTheme = TextTheme(
-    headlineLarge: const TextStyle().copyWith(
-      fontSize: 32.0.sp,
-      fontWeight: FontWeight.bold,
-      color: Colors.black,
-    ),
-    headlineMedium: const TextStyle().copyWith(
-      fontSize: 24.0.sp,
-      fontWeight: FontWeight.w600,
-      color: Colors.black,
-    ),
-    headlineSmall: const TextStyle().copyWith(
-      fontSize: 18.0.sp,
-      fontWeight: FontWeight.w600,
-      color: Colors.black,
-    ),
-    titleLarge: const TextStyle().copyWith(
-      fontSize: 16.0.sp,
-      fontWeight: FontWeight.w600,
-      color: Colors.black,
-    ),
-    titleMedium: const TextStyle().copyWith(
-      fontSize: 16.0.sp,
-      fontWeight: FontWeight.w500,
-      color: Colors.black,
-    ),
-    titleSmall: const TextStyle().copyWith(
-      fontSize: 16.0.sp,
-      fontWeight: FontWeight.w400,
-      color: Colors.black,
-    ),
-    bodyLarge: const TextStyle().copyWith(
-      fontSize: 14.0.sp,
-      fontWeight: FontWeight.w500,
-      color: Colors.black,
-    ),
-    bodyMedium: const TextStyle().copyWith(
-      fontSize: 14.0.sp,
-      fontWeight: FontWeight.normal,
-      color: Colors.black,
-    ),
-    bodySmall: const TextStyle().copyWith(
-      fontSize: 14.0.sp,
-      fontWeight: FontWeight.w500,
-      color: Colors.black.withOpacity(0.5),
-    ),
-    labelLarge: const TextStyle().copyWith(
-      fontSize: 12.0.sp,
-      fontWeight: FontWeight.normal,
-      color: Colors.black,
-    ),
-    labelMedium: const TextStyle().copyWith(
-      fontSize: 12.0.sp,
-      fontWeight: FontWeight.w500,
-      color: Colors.black.withOpacity(0.5),
-    ),
-  );
-
-  //Customizable Light Text Theme
-  static TextTheme darkTextTheme = TextTheme(
+  static TextTheme customTextTheme = TextTheme(
     headlineLarge: const TextStyle().copyWith(
       fontSize: 32.0.sp,
       fontWeight: FontWeight.bold,
