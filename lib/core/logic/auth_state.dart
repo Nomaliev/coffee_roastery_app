@@ -1,18 +1,25 @@
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-abstract class AuthCubicState extends Equatable {
-  const AuthCubicState();
+abstract class AuthCubitState extends Equatable {
+  const AuthCubitState();
 
   @override
   List<Object> get props => [];
 }
 
-class AuthInitial extends AuthCubicState {}
+class AuthInitial extends AuthCubitState {}
 
-class AuthLoading extends AuthCubicState {}
+class AuthLoading extends AuthCubitState {
+  final bool isLoading;
 
-class AuthSuccess extends AuthCubicState {
+  const AuthLoading({required this.isLoading});
+
+  @override
+  List<Object> get props => [isLoading];
+}
+
+class AuthSuccess extends AuthCubitState {
   final String message;
 
   const AuthSuccess({required this.message});
@@ -21,7 +28,7 @@ class AuthSuccess extends AuthCubicState {
   List<Object> get props => [message];
 }
 
-class AuthFailure extends AuthCubicState {
+class AuthFailure extends AuthCubitState {
   final String message;
 
   const AuthFailure({required this.message});
@@ -30,7 +37,7 @@ class AuthFailure extends AuthCubicState {
   List<Object> get props => [message];
 }
 
-class AuthAuthenticated extends AuthCubicState {
+class AuthAuthenticated extends AuthCubitState {
   final User user;
 
   const AuthAuthenticated({required this.user});
@@ -39,4 +46,4 @@ class AuthAuthenticated extends AuthCubicState {
   List<Object> get props => [user];
 }
 
-class AuthUnauthenticated extends AuthCubicState {}
+class AuthUnauthenticated extends AuthCubitState {}
