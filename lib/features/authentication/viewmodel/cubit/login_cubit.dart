@@ -25,7 +25,7 @@
 //   }
 
 // }
-import 'package:coffeeapp/features/authentication/viewmodel/login_state.dart';
+import 'package:coffeeapp/features/authentication/viewmodel/cubit/login_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginCubit extends Cubit<LoginCubitState> {

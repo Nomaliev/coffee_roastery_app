@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignupCubitState extends Equatable {
   final bool isLoading;
@@ -6,8 +7,11 @@ class SignupCubitState extends Equatable {
   final bool isFailure;
   final bool showPassword;
   final bool showConfirmPassword;
+  final User? user;
 
   const SignupCubitState({
+    this.user,
+
     this.showConfirmPassword = false,
     this.showPassword = false,
     this.isLoading = false,

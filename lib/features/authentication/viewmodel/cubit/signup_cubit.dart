@@ -1,4 +1,4 @@
-import 'package:coffeeapp/features/authentication/viewmodel/signup_state.dart';
+import 'package:coffeeapp/features/authentication/viewmodel/cubit/signup_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignupCubit extends Cubit<SignupCubitState> {

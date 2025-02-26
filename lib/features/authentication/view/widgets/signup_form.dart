@@ -1,7 +1,7 @@
 import 'package:coffeeapp/core/utils/constants/colors.dart';
 import 'package:coffeeapp/core/utils/constants/strings.dart';
-import 'package:coffeeapp/features/authentication/viewmodel/signup_cubit.dart';
-import 'package:coffeeapp/features/authentication/viewmodel/signup_state.dart';
+import 'package:coffeeapp/features/authentication/viewmodel/cubit/signup_cubit.dart';
+import 'package:coffeeapp/features/authentication/viewmodel/cubit/signup_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
